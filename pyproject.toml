@@ -1,0 +1,20 @@
+[project]
+name = "dfscoerce"
+version = "0.1.0"
+description = "MS-DFSNM coerce authentication PoC (NetrDfsRemoveStdRoot / NetrDfsAddStdRoot)"
+readme = "README.md"
+authors = [{ name = "Wh04m1001" }]
+requires-python = ">=3.10"
+dependencies = [
+    "impacket>=0.11.0",
+]
+
+[project.scripts]
+dfscoerce = "dfscoerce.main:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["dfscoerce*"]
